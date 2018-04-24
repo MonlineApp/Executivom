@@ -1,0 +1,29 @@
+    <?xml version="1.0" encoding="utf-8"?>
+<!--suppress AndroidDomInspection -->
+        android:targetSdkVersion="integer"
+        android:maxSdkVersion="integer" />
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.firebaseapp.monlineservicos.executivom">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:minSdkVersion="integer"
+        android:targetSdkVersion="integer"
+        android:maxSdkVersion="integer" />
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="UnusedAttribute">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
