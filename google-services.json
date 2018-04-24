@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "645763878241",
+    "firebase_url": "https://executivom-22837.firebaseio.com",
+    "project_id": "executivom-22837",
+    "storage_bucket": "executivom-22837.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:645763878241:android:bc17d1b80ddb8ebc",
+        "android_client_info": {
+          "package_name": "com.executivo.executivom"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "645763878241-ot861biiqeje7n447v617suc2cael957.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBb99b2KNfwicSmJDb1xA6XbqxWuKLpXnU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
