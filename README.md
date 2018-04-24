@@ -4,4 +4,4 @@ git init
 git add README.md 
 git commit -m "primeiro commit" 
 git remoto add origem https://github.com/MonlineApp/Executivom.git
- git push -u origem master
+git push -u origem maste
