@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_executivom" default="compile.module.executivom">
+  <dirname property="module.executivom.basedir" file="${ant.file.module_executivom}"/>
+  
+  <property name="module.jdk.home.executivom" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.executivom" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.executivom" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.executivom" value="-encoding UTF-8 -source 7 -target 7 ${compiler.args}"/>
+  
+  <property name="executivom.output.dir" value="${module.executivom.basedir}/build/classes/production/EXECUTIVOM"/>
+  <property name="executivom.testoutput.dir" value="${module.executivom.basedir}/build/classes/test/EXECUTIVOM"/>
+  
+  <path id="executivom.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="executivom.module.production.classpath">
+    <path refid="${module.jdk.classpath.executivom}"/>
+  </path>
+  
+  <path id="executivom.runtime.production.module.classpath">
+    <pathelement location="${executivom.output.dir}"/>
+  </path>
+  
+  <path id="executivom.module.classpath">
+    <path refid="${module.jdk.classpath.executivom}"/>
+    <pathelement location="${executivom.output.dir}"/>
+  </path>
+  
+  <path id="executivom.runtime.module.classpath">
+    <pathelement location="${executivom.testoutput.dir}"/>
+    <pathelement location="${executivom.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.executivom">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.executivom">
+    <patternset refid="excluded.from.module.executivom"/>
+  </patternset>
+  
+  <path id="executivom.module.test.sourcepath">
+    <dirset dir="${module.executivom.basedir}">
+      <include name=".gradle"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.executivom" depends="compile.module.executivom.production,compile.module.executivom.tests" description="Compile module EXECUTIVOM"/>
+  
+  <target name="compile.module.executivom.production" depends="register.custom.compilers" description="Compile module EXECUTIVOM; production classes"/>
+  
+  <target name="compile.module.executivom.tests" depends="register.custom.compilers,compile.module.executivom.production" description="compile module EXECUTIVOM; test classes" unless="skip.tests">
+    <mkdir dir="${executivom.testoutput.dir}"/>
+    <javac2 destdir="${executivom.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.executivom}/javac">
+      <compilerarg line="${compiler.args.executivom}"/>
+      <bootclasspath refid="executivom.module.bootclasspath"/>
+      <classpath refid="executivom.module.classpath"/>
+      <src refid="executivom.module.test.sourcepath"/>
+      <patternset refid="excluded.from.compilation.executivom"/>
+    </javac2>
+    
+    <copy todir="${executivom.testoutput.dir}/patchroot">
+      <fileset dir="${module.executivom.basedir}/.gradle">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="clean.module.executivom" description="cleanup module">
+    <delete dir="${executivom.output.dir}"/>
+    <delete dir="${executivom.testoutput.dir}"/>
+  </target>
+</project>

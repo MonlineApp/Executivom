@@ -7,11 +7,30 @@
         <option name="BUILDABLE" value="false" />
       </configuration>
     </facet>
+    <facet type="apk" name="APK">
+      <configuration>
+        <option name="APK_PATH" />
+        <option name="APP_PACKAGE" />
+        <option name="SETUP_ISSUES">
+          <list />
+        </option>
+        <option name="NATIVE_LIBRARIES">
+          <list />
+        </option>
+        <option name="JAVA_SOURCE_FOLDER_PATHS">
+          <set />
+        </option>
+      </configuration>
+    </facet>
+    <facet type="native-android-gradle" name="Native-Android-Gradle">
+      <configuration>
+        <option name="SELECTED_BUILD_VARIANT" value="" />
+      </configuration>
+    </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_7" inherit-compiler-output="true">
-    <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <excludeFolder url="file://$MODULE_DIR$/.gradle" />
+      <sourceFolder url="file://$MODULE_DIR$/.gradle" type="java-test-resource" relativeOutputPath="patchroot" generated="true" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

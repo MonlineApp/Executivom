@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="executivom" default="all">
+  
+  
+  <property file="executivom.properties"/>
+  <!-- Uncomment the following property if no tests compilation is needed -->
+  <!-- 
+  <property name="skip.tests" value="true"/>
+   -->
+  
+  <!-- Compiler options -->
+  
+  <property name="compiler.debug" value="on"/>
+  <property name="compiler.generate.no.warnings" value="off"/>
+  <property name="compiler.args" value=""/>
+  <property name="compiler.max.memory" value="700m"/>
+  <patternset id="ignored.files">
+    <exclude name="**/*.hprof/**"/>
+    <exclude name="**/*.pyc/**"/>
+    <exclude name="**/*.pyo/**"/>
+    <exclude name="**/*.rbc/**"/>
+    <exclude name="**/*.yarb/**"/>
+    <exclude name="**/*~/**"/>
+    <exclude name="**/.DS_Store/**"/>
+    <exclude name="**/.git/**"/>
+    <exclude name="**/.hg/**"/>
+    <exclude name="**/.svn/**"/>
+    <exclude name="**/CVS/**"/>
+    <exclude name="**/__pycache__/**"/>
+    <exclude name="**/_svn/**"/>
+    <exclude name="**/vssver.scc/**"/>
+    <exclude name="**/vssver2.scc/**"/>
+  </patternset>
+  <patternset id="library.patterns">
+    <include name="*.war"/>
+    <include name="*.swc"/>
+    <include name="*.apk"/>
+    <include name="*.zip"/>
+    <include name="*.egg"/>
+    <include name="*.ane"/>
+    <include name="*.jar"/>
+    <include name="*.ear"/>
+  </patternset>
+  <patternset id="compiler.resources">
+    <exclude name="**/?*.java"/>
+    <exclude name="**/?*.form"/>
+    <exclude name="**/?*.class"/>
+    <exclude name="**/?*.groovy"/>
+    <exclude name="**/?*.scala"/>
+    <exclude name="**/?*.flex"/>
+    <exclude name="**/?*.kt"/>
+    <exclude name="**/?*.clj"/>
+    <exclude name="**/?*.aj"/>
+  </patternset>
+  
+  <!-- JDK definitions -->
+  
+  <property name="project.jdk.home" value="${jdk.home.android_api_19_platform}"/>
+  <property name="project.jdk.bin" value="${jdk.bin.android_api_19_platform}"/>
+  <property name="project.jdk.classpath" value="jdk.classpath.android_api_19_platform"/>
+  
+  
+  <!-- Project Libraries -->
+  
+  <path id="library.maven:_jmock:jmock:1.1.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/jmock/jmock/1.1.0/jmock-1.1.0.jar"/>
+  </path>
+  
+  <path id="library.maven:_junit:junit:4.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/junit/junit/4.0/junit-4.0.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.easymock:easymock:2.2.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/easymock/easymock/2.2/easymock-2.2.jar"/>
+  </path>
+  
+  <path id="library.sbt:_org.scala-lang:scala-library:2.12.4:jar.classpath">
+    <pathelement location="${basedir}/../../.sbt/boot/scala-2.12.4/lib/scala-library.jar"/>
+  </path>
+  
+  
+  <!-- Global Libraries -->
+  
+  <path id="library.groovy-2.4.13.classpath">
+    <pathelement location="C:/Users/Mservice/.IdeaIC2018.1/config/plugins/camel-idea-plugin/lib/camel-catalog-2.21.0.jar"/>
+    <pathelement location="C:/Users/Mservice/.IdeaIC2018.1/config/plugins/camel-idea-plugin/lib/camel-catalog-connector-2.21.0.jar"/>
+    <pathelement location="C:/Users/Mservice/.IdeaIC2018.1/config/plugins/camel-idea-plugin/lib/camel-catalog-maven-2.21.0.jar"/>
+    <pathelement location="C:/Users/Mservice/.IdeaIC2018.1/config/plugins/camel-idea-plugin/lib/camel-idea-plugin-0.5.2-SNAPSHOT.jar"/>
+    <pathelement location="C:/Users/Mservice/.IdeaIC2018.1/config/plugins/camel-idea-plugin/lib/commons-codec-1.2.jar"/>
+    <pathelement location="C:/Users/Mservice/.IdeaIC2018.1/config/plugins/camel-idea-plugin/lib/commons-httpclient-3.1.jar"/>
+    <pathelement location="C:/Users/Mservice/.IdeaIC2018.1/config/plugins/camel-idea-plugin/lib/commons-io-2.5.jar"/>
+    <pathelement location="C:/Users/Mservice/.IdeaIC2018.1/config/plugins/camel-idea-plugin/lib/commons-logging-1.0.4.jar"/>
+    <pathelement location="C:/Users/Mservice/.IdeaIC2018.1/config/plugins/camel-idea-plugin/lib/groovy-2.4.13.jar"/>
+    <pathelement location="C:/Users/Mservice/.IdeaIC2018.1/config/plugins/camel-idea-plugin/lib/ivy-2.4.0.jar"/>
+    <pathelement location="C:/Users/Mservice/.IdeaIC2018.1/config/plugins/camel-idea-plugin/lib/jackson-annotations-2.8.0.jar"/>
+    <pathelement location="C:/Users/Mservice/.IdeaIC2018.1/config/plugins/camel-idea-plugin/lib/jackson-core-2.8.10.jar"/>
+    <pathelement location="C:/Users/Mservice/.IdeaIC2018.1/config/plugins/camel-idea-plugin/lib/jackson-databind-2.8.10.jar"/>
+    <pathelement location="C:/Users/Mservice/.IdeaIC2018.1/config/plugins/camel-idea-plugin/lib/jaxb-core-2.3.0.jar"/>
+    <pathelement location="C:/Users/Mservice/.IdeaIC2018.1/config/plugins/camel-idea-plugin/lib/jaxb-impl-2.3.0.jar"/>
+    <pathelement location="C:/Users/Mservice/.IdeaIC2018.1/config/plugins/camel-idea-plugin/lib/miglayout-core-5.0.jar"/>
+    <pathelement location="C:/Users/Mservice/.IdeaIC2018.1/config/plugins/camel-idea-plugin/lib/miglayout-swing-5.0.jar"/>
+    <pathelement location="C:/Users/Mservice/.IdeaIC2018.1/config/plugins/camel-idea-plugin/lib/slf4j-api-1.7.25.jar"/>
+    <pathelement location="C:/Users/Mservice/.IdeaIC2018.1/config/plugins/camel-idea-plugin/lib/snakeyaml-1.6.jar"/>
+  </path>
+  <!-- Register Custom Compiler Taskdefs -->
+  <property name="javac2.home" value="${idea.home}/lib"/>
+  <path id="javac2.classpath">
+    <fileset dir="${javac2.home}">
+      <include name="javac2.jar"/>
+      <include name="jdom.jar"/>
+      <include name="asm-all*.jar"/>
+      <include name="jgoodies-forms.jar"/>
+    </fileset>
+  </path>
+  <target name="register.custom.compilers">
+    <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="javac2.classpath"/>
+    <taskdef name="instrumentIdeaExtensions" classname="com.intellij.ant.InstrumentIdeaExtensions" classpathref="javac2.classpath"/>
+    <property name="grooovyc.task.sdk" value="library.groovy-2.4.13.classpath"/>
+    <taskdef name="groovyc" classname="org.codehaus.groovy.ant.Groovyc" classpathref="${grooovyc.task.sdk}"/>
+  </target>
+  
+  <!-- Modules -->
+  
+  <import file="${basedir}/app/module_app.xml"/>
+  
+  <import file="${basedir}/.idea/modules/module_executivom.xml"/>
+  
+  <import file="${basedir}/module_executivom.xml"/>
+  
+  <import file="${basedir}/.idea/modules/module_executivom-build.xml"/>
+  
+  <import file="${path.variable.maven_repository}/org/hamcrest/hamcrest-parent/1.1/module_hamcrest-parent.xml"/>
+  
+  <target name="init" description="Build initialization">
+    <!-- Perform any build initialization in this target -->
+  </target>
+  
+  <target name="clean" depends="clean.module.app, clean.module.executivom, clean.module.executivom, clean.module.executivom-build, clean.module.hamcrest-parent" description="cleanup all"/>
+  
+  <target name="build.modules" depends="init, clean, compile.module.app, compile.module.executivom, compile.module.executivom, compile.module.executivom-build, compile.module.hamcrest-parent" description="build all modules"/>
+  
+  <target name="all" depends="build.modules" description="build all"/>
+</project>

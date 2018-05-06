@@ -1,23 +1,33 @@
+import android.os.Bundle
+
 buildscript {
     dependencies {
-        classpath 'com.google.gms:google-services:3.0.0'
+        classpath 'com.google.gms:google-services:3.2.0'
     }
 }
 Bundle bundle = new Bundle();
-bundle.putString(FirebaseAnalytics.Param.ITEM_ID, id);
-bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, name);
-bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "image");
-mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
-private FirebaseAnalytics mFirebaseAnalytics;
+//noinspection Annotator
+bundle.putString '(FirebaseAnalytics.Param.ITEM_ID, def id);
+//noinspection Annotator,Annotator,Annotator,Annotator,Annotator,Annotator
+bundle.putString '(FirebaseAnalytics.Param.ITEM_NAME, name);
+bundle.putString '(FirebaseAnalytics.Param.CONTENT_TYPE, "image");'
 
-// ...
+def string = /event;/
+
+//noinspection Annotator
+private String mFirebaseAnalytics;
+
+/* ...
 
 
 
-// Obtain the FirebaseAnalytics instance.
-mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
-Bundle bundle = new Bundle();
-bundle.putString(FirebaseAnalytics.Param.ITEM_ID, id);
-bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, name);
-bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "image");
-mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
+   Obtain the Firebase Analytics instance. */
+
+
+
+mFirebaseAnalytics = 'FirebaseAnalytics.getInstance(this)';
+bundle = new Bundle();
+bundle.putString '( FirebaseAnalytics. Param.ITEM_ID, id);'
+bundle.putString '( FirebaseAnalytics.Param.ITEM_NAME, name);'
+bundle.putString '( FirebaseAnalytics.Param.CONTENT_TYPE, "image");'
+mFirebaseAnalytics.'logEvent' '( mFirebaseAnalytics.Event.SELECT_CONTENT, bundle);'
